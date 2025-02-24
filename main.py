@@ -15,3 +15,6 @@ def create_user(user: User):
     users.append(user)
     return user
 
+@app.get("/user/")
+def get_user():
+    return users
