@@ -1,4 +1,3 @@
-# main.py
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -10,8 +9,11 @@ class User(BaseModel):
 
 users = []
 
-@app.post("/user/")
+@app.post("/users/")
 def create_user(user: User):
     users.append(user)
-    return user
+    return {"message": "Usuario creado exitosamente", "user": user}
 
+@app.get("/users/")
+def get_users():
+    return {"users": users}
