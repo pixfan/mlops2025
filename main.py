@@ -14,3 +14,4 @@ users = []
 def create_user(user: User):
     users.append(user)
     return user
+
